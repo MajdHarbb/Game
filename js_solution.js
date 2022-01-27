@@ -79,13 +79,15 @@ function Display(index) {
 /* Play "wrong" sound, reset level and sequence array */
 function GameOver() {
   sounds[4].play();
+  generated_sequence = [];
   document.body.classList.add("game-over");
     setTimeout(function () {
       document.body.classList.remove("game-over");
     }, 200);
-  document.getElementById("title").innerText= "Game Over!"
+  document.getElementById("title").innerText= "Game Over! Press Any Key to Restart"
   level = 0;
-  generated_sequence = [];
+  
+
 }
 
 /* Onclick --> button's index to input array and display blinking and sound effects
