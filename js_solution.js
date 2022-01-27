@@ -15,6 +15,7 @@ document.addEventListener("keydown", (event) => {
   StartGame();
   });
 
+
 function StartGame() {
   var random = Math.floor(Math.random() * 4);
   generated_sequence.push(random);
@@ -26,11 +27,28 @@ function StartGame() {
 function Display(index){
   if(index == 0){
     sounds[0].play();
+    document.getElementById("blue").classList.add("pressed");
+    setTimeout(function(){
+      document.getElementById("blue").classList.remove("pressed");
+    },250)
+    
   }else if(index == 1){
     sounds[1].play();
+    document.getElementById("green").classList.add("pressed");
+    setTimeout(function(){
+      document.getElementById("green").classList.remove("pressed");
+    },250)
   }else if(index == 2){
     sounds[2].play();
+    document.getElementById("red").classList.add("pressed");
+    setTimeout(function(){
+      document.getElementById("red").classList.remove("pressed");
+    },250)
   }else if(index == 3){
     sounds[3].play();
+    document.getElementById("yellow").classList.add("pressed");
+    setTimeout(function(){
+      document.getElementById("yellow").classList.remove("pressed");
+    },250)
   }
 }
