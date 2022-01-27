@@ -22,7 +22,9 @@ var level = 0;
 
 /* Game Starts on keyboard press */
 document.addEventListener("keydown", (event) => {
+  
   StartGame();
+  
   ButtonsClick();
 });
 
@@ -78,15 +80,15 @@ function Display(index) {
 
 /* Play "wrong" sound, reset level and sequence array */
 function GameOver() {
+
   sounds[4].play();
   generated_sequence = [];
+  level = 0;
   document.body.classList.add("game-over");
     setTimeout(function () {
       document.body.classList.remove("game-over");
     }, 200);
-  document.getElementById("title").innerText= "Game Over! Press Any Key to Restart"
-  level = 0;
-  
+  document.getElementById("title").innerText= "Game Over! Press Any Key to Restart";
 
 }
 
@@ -99,8 +101,10 @@ function ButtonsClick() {
   green.addEventListener("click", function () {
     input_sequence.push(0);
     Display(0);
-    if(input_sequence[input_sequence.length-1] == generated_sequence[input_sequence.length-1]){
+    
+    if(generated_sequence[input_sequence.length-1] == input_sequence[input_sequence.length-1]){
       if (generated_sequence.length == input_sequence.length) {
+        console.log(input_sequence);
         setTimeout(function () { StartGame();}, 1500);
       }
     }else{GameOver();}
@@ -110,8 +114,9 @@ function ButtonsClick() {
   red.addEventListener("click", function () {
     input_sequence.push(1);
     Display(1);
-    if(input_sequence[input_sequence.length-1] == generated_sequence[input_sequence.length-1]){
+    if( generated_sequence[input_sequence.length-1] == input_sequence[input_sequence.length-1]){
       if (generated_sequence.length == input_sequence.length) {
+        console.log(input_sequence);
         setTimeout(function () { StartGame();}, 1500);
       }
     }else{GameOver();}
@@ -120,8 +125,9 @@ function ButtonsClick() {
   yellow.addEventListener("click", function () {
     input_sequence.push(2);
     Display(2);
-    if(input_sequence[input_sequence.length-1] == generated_sequence[input_sequence.length-1]){
+    if(generated_sequence[input_sequence.length-1] == input_sequence[input_sequence.length-1]){
       if (generated_sequence.length == input_sequence.length) {
+        console.log(input_sequence);
         setTimeout(function () { StartGame();}, 1500);
       }
     }else{GameOver();}
@@ -130,12 +136,14 @@ function ButtonsClick() {
   blue.addEventListener("click", function () {
     input_sequence.push(3);
     Display(3);
-    if(input_sequence[input_sequence.length-1] == generated_sequence[input_sequence.length-1]){
+    if(generated_sequence[input_sequence.length-1] == input_sequence[input_sequence.length-1]){
       if (generated_sequence.length == input_sequence.length) {
+        console.log(input_sequence);
         setTimeout(function () { StartGame();}, 1500);
       }
     }else{GameOver();}
   });
+  
 }
 
 
