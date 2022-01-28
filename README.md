@@ -22,6 +22,9 @@ Click on [play In Browser](https://majdharbb.github.io/Game/) to play the demo.
 </p>
 
 ## Images:
+Landing Page: the player presses any key to start.
 ![Game](images/startgame.png)
+Walk through to level 2 if the player correctly mimics the generated sequence. 
 ![level](images/level.png)
+Game Over: when the player presses the wrong button, now the game restarts on pressing any key.
 ![gameover](images/gameover.png)
