@@ -30,7 +30,8 @@ To use the JS file, comment the JQuery script tags:
 ```
 Or use the JQuery file, comment the JavaScript script tags:
 ```
-<!-- <script src="scripts/jquery_solution.js"></script> -->```
+<!-- <script src="scripts/jquery_solution.js"></script> -->
+```
 
 ## Images:
 Landing Page: the player presses any key to start.
