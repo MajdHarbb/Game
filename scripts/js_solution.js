@@ -26,14 +26,13 @@ document.addEventListener("keypress", (event) => {
   if(game_on == false){
     game_on = true;
     StartGame();
-    
+    ButtonsClick();
   }
   
 });
 
 /* Generate random number, push it to sequence array, and make the button with the matching index blink */
 function StartGame() {
-  ButtonsClick();
   var random = Math.floor(Math.random() * 4);
   generated_sequence.push(random);
   var displayed = generated_sequence[generated_sequence.length-1];
@@ -42,7 +41,6 @@ function StartGame() {
   level = level + 1;
   document.getElementById("title").innerText = "Level " +level;
   input_sequence=[];
-  
 
 }
 
@@ -122,7 +120,6 @@ function GameOver() {
 
   sounds[4].play();
   generated_sequence = [];
-  input_sequence = [];
   level = 0;
   document.body.classList.add("game-over");
     setTimeout(function () {
@@ -176,7 +173,6 @@ function checkInput(index) {
     GameOver();
   }
 }
-
 
 
 
